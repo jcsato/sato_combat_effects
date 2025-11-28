@@ -1,0 +1,5 @@
+dist/
+old_versions/
+testing/
+
+ini.cfg

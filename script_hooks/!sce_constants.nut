@@ -1,0 +1,3 @@
+::SCE <- {
+	MinimumFatigueRecoveryRate = 10
+}

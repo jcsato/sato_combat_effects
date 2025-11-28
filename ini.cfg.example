@@ -1,0 +1,7 @@
+[General]
+modname=sato_combat_effects
+version=0.2-beta
+
+[Build]
+modkitpath=YOUR_MODKIT_PATH_HERE
+datapath=YOUR_DATA_PATH_HERE
