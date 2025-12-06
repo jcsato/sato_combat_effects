@@ -1,4 +1,4 @@
-::mods_registerMod("sato_combat_effects", 0.2, "Sato's Combat Effects");
+::mods_registerMod("sato_combat_effects", 0.3, "Sato's Combat Effects");
 
 ::mods_queue("sato_combat_effects", ">sato_balance_mod", function() {
 	::include("script_hooks/!sce_constants");

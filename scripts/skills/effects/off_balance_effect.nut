@@ -29,6 +29,30 @@ off_balance_effect <- inherit("scripts/skills/skill", {
 				];
 	}
 
+	function onAdded() {
+		local actor = getContainer().getActor();
+
+		if (actor.getCurrentProperties().IsResistantToAnyStatuses && Math.rand(1, 100) <= 50) {
+			if (!actor.isHiddenToPlayer())
+				Tactical.EventLog.log(Const.UI.getColorizedEntityName(actor) + " quickly regained balance thanks to his unnatural physiology");
+
+			removeSelf();
+		} else {
+			setTurns(Math.max(1, 1 + getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration))
+		}
+	}
+
+	function onRefresh() {
+		setTurns(Math.max(1, 1 + getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration))
+	}
+
+	function onTurnEnd() {
+		if (getTurns() <= 1)
+			removeSelf();
+		else
+			addTurns(-1);
+	}
+
 	function addTurns( _t ) {
 		m.TurnsLeft += _t;
 	}
